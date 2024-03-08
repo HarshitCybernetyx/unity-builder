@@ -14,18 +14,18 @@ namespace UnityBuilderAction.Input
       {
         PlayerSettings.Android.useCustomKeystore = true;
         PlayerSettings.Android.keystoreName = keystoreName;
-        Console.WriteLine("keystore name provided with keystoreName" + keystoreName);
+         UnityEngine.Debug.Log("keystore name provided with keystoreName" + keystoreName);
       }
       else 
       {
-        Console.WriteLine("No keystore name provided");
+         UnityEngine.Debug.Log("No keystore name provided");
       }
 #endif
       // Can't use out variable declaration as Unity 2018 doesn't support it
       string keystorePass;
       if (options.TryGetValue("androidKeystorePass", out keystorePass) && !string.IsNullOrEmpty(keystorePass))
         PlayerSettings.Android.keystorePass = keystorePass;
-      Console.WriteLine("No keystore pass provided with " + keystorePass);
+       UnityEngine.Debug.Log("No keystore pass provided with " + keystorePass);
       
       string keyaliasName;
       if (options.TryGetValue("androidKeyaliasName", out keyaliasName) && !string.IsNullOrEmpty(keyaliasName))
